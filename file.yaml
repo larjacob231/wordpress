@@ -1,0 +1,121 @@
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kubeadm.alpha.kubernetes.io/cri-socket: unix:///var/run/containerd/containerd.sock
+    node.alpha.kubernetes.io/ttl: "0"
+    volumes.kubernetes.io/controller-managed-attach-detach: "true"
+  creationTimestamp: "2024-09-11T22:43:16Z"
+  labels:
+    beta.kubernetes.io/arch: amd64
+    beta.kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+    kubernetes.io/hostname: kube1
+    kubernetes.io/os: linux
+    node-role.kubernetes.io/control-plane: ""
+    node.kubernetes.io/exclude-from-external-load-balancers: ""
+  name: kube1
+  resourceVersion: "458353"
+  uid: 1db1773d-0651-4200-b7de-14cef26cc01f
+spec:
+  taints:
+  - effect: NoSchedule
+    key: node-role.kubernetes.io/control-plane
+status:
+  addresses:
+  - address: 192.168.6.3
+    type: InternalIP
+  - address: kube1
+    type: Hostname
+  allocatable:
+    cpu: "4"
+    ephemeral-storage: "14166105270"
+    hugepages-2Mi: "0"
+    memory: 1911908Ki
+    pods: "110"
+  capacity:
+    cpu: "4"
+    ephemeral-storage: 15371208Ki
+    hugepages-2Mi: "0"
+    memory: 2014308Ki
+    pods: "110"
+  conditions:
+  - lastHeartbeatTime: "2024-09-18T02:50:44Z"
+    lastTransitionTime: "2024-09-11T22:43:16Z"
+    message: kubelet has sufficient memory available
+    reason: KubeletHasSufficientMemory
+    status: "False"
+    type: MemoryPressure
+  - lastHeartbeatTime: "2024-09-18T02:50:44Z"
+    lastTransitionTime: "2024-09-11T22:43:16Z"
+    message: kubelet has no disk pressure
+    reason: KubeletHasNoDiskPressure
+    status: "False"
+    type: DiskPressure
+  - lastHeartbeatTime: "2024-09-18T02:50:44Z"
+    lastTransitionTime: "2024-09-11T22:43:16Z"
+    message: kubelet has sufficient PID available
+    reason: KubeletHasSufficientPID
+    status: "False"
+    type: PIDPressure
+  - lastHeartbeatTime: "2024-09-18T02:50:44Z"
+    lastTransitionTime: "2024-09-12T00:38:52Z"
+    message: kubelet is posting ready status
+    reason: KubeletReady
+    status: "True"
+    type: Ready
+  daemonEndpoints:
+    kubeletEndpoint:
+      Port: 10250
+  images:
+  - names:
+    - registry.k8s.io/etcd@sha256:a6dc63e6e8cfa0307d7851762fa6b629afb18f28d8aa3fab5a6e91b4af60026a
+    - registry.k8s.io/etcd:3.5.15-0
+    sizeBytes: 56909194
+  - names:
+    - registry.k8s.io/kube-proxy@sha256:c727efb1c6f15a68060bf7f207f5c7a765355b7e3340c513e582ec819c5cd2fe
+    - registry.k8s.io/kube-proxy:v1.31.0
+    sizeBytes: 30207900
+  - names:
+    - docker.io/flannel/flannel@sha256:ce2d6cb79949b33b4a9d527bce91f7da4b62a95a1bd4ea090bcdcde8840b6baf
+    - docker.io/flannel/flannel:v0.25.6
+    sizeBytes: 28822026
+  - names:
+    - registry.k8s.io/kube-apiserver@sha256:470179274deb9dc3a81df55cfc24823ce153147d4ebf2ed649a4f271f51eaddf
+    - registry.k8s.io/kube-apiserver:v1.31.0
+    sizeBytes: 28063421
+  - names:
+    - registry.k8s.io/kube-controller-manager@sha256:f6f3c33dda209e8434b83dacf5244c03b59b0018d93325ff21296a142b68497d
+    - registry.k8s.io/kube-controller-manager:v1.31.0
+    sizeBytes: 26240868
+  - names:
+    - registry.k8s.io/kube-scheduler@sha256:96ddae9c9b2e79342e0551e2d2ec422c0c02629a74d928924aaa069706619808
+    - registry.k8s.io/kube-scheduler:v1.31.0
+    sizeBytes: 20196722
+  - names:
+    - registry.k8s.io/coredns/coredns@sha256:1eeb4c7316bacb1d4c8ead65571cd92dd21e27359f0d4917f1a5822a73b75db1
+    - registry.k8s.io/coredns/coredns:v1.11.1
+    sizeBytes: 18182961
+  - names:
+    - docker.io/flannel/flannel-cni-plugin@sha256:5d4fb9f90389a33b397fba4c8f371454c21aa146696aec46481214892e66c1b8
+    - docker.io/flannel/flannel-cni-plugin:v1.5.1-flannel2
+    sizeBytes: 4839240
+  - names:
+    - registry.k8s.io/pause@sha256:ee6521f290b2168b6e0935a181d4cff9be1ac3f505666ef0e3c98fae8199917a
+    - registry.k8s.io/pause:3.10
+    sizeBytes: 320368
+  - names:
+    - registry.k8s.io/pause@sha256:9001185023633d17a2f98ff69b6ff2615b8ea02a825adffa40422f51dfdcde9d
+    - registry.k8s.io/pause:3.8
+    sizeBytes: 311286
+  nodeInfo:
+    architecture: amd64
+    bootID: f32becf5-49f8-46d6-ac6d-4865abf0413b
+    containerRuntimeVersion: containerd://1.7.12
+    kernelVersion: 6.8.0-44-generic
+    kubeProxyVersion: ""
+    kubeletVersion: v1.31.0
+    machineID: 1f911d65c0f94486a0ca84bb58513a87
+    operatingSystem: linux
+    osImage: Ubuntu 24.04.1 LTS
+    systemUUID: 1f911d65-c0f9-4486-a0ca-84bb58513a87
